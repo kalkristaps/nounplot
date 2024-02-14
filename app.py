@@ -14,10 +14,13 @@ import plotly.graph_objs as go
 import pandas as pd
 
 
-freqnouns = pd.read_csv('data/freqnouns.csv', header=[0,1,2], index_col=0)
-propnouns = pd.read_csv('data/propnouns.csv', header=[0,1,2], index_col=0)
-ranknouns = pd.read_csv('data/ranknouns.csv', header=[0,1,2], index_col=0)
+urlFreq = "https://laimabaldina.com/nounplots/public/freqnouns.csv"
+urlProp = "https://laimabaldina.com/nounplots/public/propnouns.csv"
+urlRank = "https://laimabaldina.com/nounplots/public/ranknouns.csv"
 
+freqnouns = pd.read_csv(open_url(urlFreq), header=[0,1,2], index_col=0)
+propnouns = pd.read_csv(open_url(urlProp), header=[0,1,2], index_col=0)
+ranknouns = pd.read_csv(open_url(urlRank), header=[0,1,2], index_col=0)
 
 app = dash.Dash(__name__)
 
