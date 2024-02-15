@@ -5,22 +5,15 @@ Created on Tue Feb 13 02:32:35 2024
 @author: P282980
 """
 
-
-
 import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output, State
 import plotly.graph_objs as go
 import pandas as pd
 
-
-urlFreq = "https://laimabaldina.com/nounplots/public/freqnouns.csv"
-urlProp = "https://laimabaldina.com/nounplots/public/propnouns.csv"
-urlRank = "https://laimabaldina.com/nounplots/public/ranknouns.csv"
-
-freqnouns = pd.read_csv(urlFreq, header=[0,1,2], index_col=0)
-propnouns = pd.read_csv(urlProp, header=[0,1,2], index_col=0)
-ranknouns = pd.read_csv(urlRank, header=[0,1,2], index_col=0)
+freqnouns = pd.read_csv(data\freqnouns.csv.xz, header=[0,1,2], index_col=0)
+propnouns = pd.read_csv(data\propnounscsv.xz, header=[0,1,2], index_col=0)
+ranknouns = pd.read_csv(ranknouns.csv.xz, header=[0,1,2], index_col=0)
 
 app = dash.Dash(__name__)
 
