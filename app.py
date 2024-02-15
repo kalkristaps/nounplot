@@ -11,9 +11,9 @@ from dash.dependencies import Input, Output, State
 import plotly.graph_objs as go
 import pandas as pd
 
-urlFreq = "https://github.com/kalkristaps/nounplot/blob/main/data/freqnouns.csv.xz"
-urlProp = "https://github.com/kalkristaps/nounplot/blob/main/data/propnouns.csv.xz"
-urlRank = "https://github.com/kalkristaps/nounplot/blob/main/data/ranknouns.csv.xz"
+urlFreq = "https://laimabaldina.com/nounplots/public/freqnouns.csv"
+urlProp = "https://laimabaldina.com/nounplots/public/propnouns.csv"
+urlRank = "https://laimabaldina.com/nounplots/public/ranknouns.csv"
 
 freqnouns = pd.read_csv(urlFreq, header=[0,1,2], index_col=0)
 propnouns = pd.read_csv(urlProp, header=[0,1,2], index_col=0)
