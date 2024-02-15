@@ -11,9 +11,9 @@ from dash.dependencies import Input, Output, State
 import plotly.graph_objs as go
 import pandas as pd
 
-freqnouns = pd.read_csv(data\freqnouns.csv.xz, header=[0,1,2], index_col=0)
-propnouns = pd.read_csv(data\propnounscsv.xz, header=[0,1,2], index_col=0)
-ranknouns = pd.read_csv(ranknouns.csv.xz, header=[0,1,2], index_col=0)
+freqnouns = pd.read_csv(data/freqnouns.csv.xz, header=[0,1,2], index_col=0)
+propnouns = pd.read_csv(data/propnounscsv.xz, header=[0,1,2], index_col=0)
+ranknouns = pd.read_csv(data/ranknouns.csv.xz, header=[0,1,2], index_col=0)
 
 app = dash.Dash(__name__)
 
