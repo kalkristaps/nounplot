@@ -82,9 +82,9 @@ def update_graph(selected_subreddits, data_type, input_words):
     figure = go.Figure()
 
     # Generate a sorted list of all unique year-month combinations present in the DataFrame
-    year_month_list = sorted(list(set([(year, month) for year, month, subreddit in df.columns])), key=lambda x: (x[0], x[1]))
+    year_month_list = sorted(list(set([(year, f'{str(month.zfill(2))}') for year, month, subreddit in df.columns])), key=lambda x: (x[0], x[1]))
     # Convert year-month tuples to a string format for display, e.g., '2020-01'
-    x_axis_labels = [f'{year}-{str(month).zfill(2)}' for year, month in year_month_list]
+    x_axis_labels = [f'{year}-{month}' for year, month in year_month_list]
 
     for word in words:
         if word in df.index:
