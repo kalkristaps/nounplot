@@ -112,8 +112,9 @@ def update_graph(selected_subreddits, data_type, input_words):
             'categoryarray': x_axis_labels
         },
         yaxis={
-            'title': 'Rank' if data_type == 'rank' else ('Frequency' if data_type == 'freq' else 'Proportion'),
-            'autorange': 'reversed' if data_type == 'rank' else True  # Reverse Y-axis for 'rank'
+            'title': 'Rank' if data_type == 'rank' else ('Frequency' if data_type == 'freq' else 'Proportion (%)'),
+            'autorange': 'reversed' if data_type == 'rank' else True,  # Reverse Y-axis for 'rank'
+            'tickformat': ',.2%' if data_type == 'prop' else None  # Format as percentage if 'prop'
         },
         legend_title='Word in Subreddit',
         xaxis_tickangle=-45  # Improve label readability
