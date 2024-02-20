@@ -5,8 +5,6 @@ Created on Tue Feb 13 02:32:35 2024
 @author: P282980
 """
 
-
-
 import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
@@ -14,15 +12,12 @@ import plotly.graph_objs as go
 import pandas as pd
 
 
-
-
-
 urlFreq = "https://laimabaldina.com/nounplots/public/freqnouns.csv"
 urlProp = "https://laimabaldina.com/nounplots/public/propnouns.csv"
 urlRank = "https://laimabaldina.com/nounplots/public/ranknouns.csv"
 
-urlFreqYr = "https://laimabaldina.com/nounplots/public/freqnouns-yr.csv"
-urlPropYr = "https://laimabaldina.com/nounplots/public/propnouns-yr.csv"
+urlFreqYr = "https://laimabaldina.com/nounplots/public/freqnouns_yr.csv"
+urlPropYr = "https://laimabaldina.com/nounplots/public/propnouns_yr.csv"
 urlRankYr = "https://laimabaldina.com/nounplots/public/ranknouns_yr.csv"
 
 freqnouns = pd.read_csv(urlFreq, header=[0,1,2], index_col=0)
@@ -33,12 +28,10 @@ freqnouns_yr = pd.read_csv(urlFreqYr, header=[0,1], index_col=0)
 propnouns_yr = pd.read_csv(urlPropYr, header=[0,1], index_col=0)
 ranknouns_yr = pd.read_csv(urlRankYr, header=[0,1], index_col=0)
 
-
 # Initialize Dash application
 app = dash.Dash(__name__)
 
 server = app.server
-
 
 # Extracting subreddit and month options for dropdown menus
 subreddit_options = [{'label': subr, 'value': subr} for subr in ['Conservative', 'Liberal', 'Republican', 'democrats', 'politics']]
